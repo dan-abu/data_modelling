@@ -1,0 +1,6 @@
+analytics_engineer_exercise:
+  target: prod
+  outputs:
+    prod:
+      type: duckdb
+      path: ./pricing.duckdb

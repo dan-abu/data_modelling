@@ -1,0 +1,100 @@
+version: 2
+
+models:
+
+  - name: intm_pricing__tariffs
+    description: Intermediate model at the tariff grain
+    columns:
+      - name: rule_id
+        description: Primary key for the set of rules defining price logic
+        tests:
+          - not_null
+      - name: tariff_created_at
+        data_type: timestamp with time zone
+        description: Time when tariff was created
+      - name: tariff_price
+        data_type: varchar
+        description: Price set for the tariff
+      - name: duration
+        data_type: varchar
+        description: Duration of parking session
+      - name: time_interval
+        data_type: varchar
+        description: Unit of time (e.g. hour or minute)
+      - name: applies_on_days
+        data_type: varchar[]
+        description: Integers representing days of the week
+      - name: monthly
+        data_type: varchar
+        description: Flag indicating if the row represents a monthly tariff
+
+  - name: intm_pricing__filtered_to_crnt_prices
+    description: Intermediate model for current prices
+    columns:
+      - name: price_id
+        data_type: bigint
+        description: Primary Key for pricing given at a point in time
+        tests:
+          - not_null
+      - name: rule_id
+        data_type: bigint
+        description: FK for rule at point in time
+        tests:
+          - not_null
+      - name: location_id
+        data_type: bigint
+        description: Key for parking location
+      - name: pricing_created_at
+        data_type: timestamp_ns
+        description: Time when price was created
+      - name: pricing_deleted_at
+        data_type: timestamp_ns
+        description: Time when price was deleted
+
+  - name: intm_tariffs__converted_to_duration
+    description: Interim model with logic applied to create a duration column (e.g. 1 month, 1 hour, 30 minutes etc.)
+    columns:
+      - name: rule_id
+        data_type: bigint
+        description: Primary key for the set of rules defining price logic
+        tests:
+          - not_null
+      - name: tariff_created_at
+        data_type: timestamp with time zone
+        description: Time when the tariff was created
+      - name: tariff_price
+        data_type: varchar
+        description: Price for tariff
+      - name: duration
+        data_type: varchar
+        description: Length of parking session
+      - name: applies_on_days
+        data_type: varchar[]
+        description: Days when tariff applies
+
+  - name: intm_tariffs__unnested_weekday
+    description: |
+      unnesting applies_on_days to show the weekdays when a rule's tariff price
+      applies row by row depending on duration
+    columns:
+      - name: rule_id
+        data_type: bigint
+        description: FK for the set of rules defining price logic
+        tests:
+          - not_null
+
+      - name: tariff_created_at
+        data_type: timestamp with time zone
+        description: Time when tariff was created
+
+      - name: tariff_price
+        data_type: varchar
+        description: Price set for tariff
+
+      - name: duration
+        data_type: varchar
+        description: Length of parking session
+
+      - name: applies_on_weekday_id
+        data_type: varchar
+        description: Day of week when tariff applies

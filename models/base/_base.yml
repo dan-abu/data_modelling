@@ -1,0 +1,35 @@
+version: 2
+
+models:
+
+  - name: base_pricing__rules
+    description: Base table for pricing rules
+    columns:
+      - name: rule_id
+        description: Primary key for the set of rules defining price logic
+        tests:
+          - not_null
+      - name: rule_created_at
+        description: Time when the rule was created
+      - name: tariff
+        description: |
+          Unnested tariff data - each row now represents one tariff
+          (i.e. a price that applies to parking sessions of a particular
+          duration and start time)
+  - name: base_pricing__prices
+    description: Base table for pricing prices
+    columns:
+      - name: price_id
+        description: Primary key for the price generated at a point of time from a set of rules defining price logic
+        tests:
+          - not_null
+      - name: rule_id
+        description: Foreign key (base_pricing__rules) for the set of rules defining price logic.
+        tests:
+          - not_null
+      - name: location_id
+        description: Defines location of parking session
+      - name: pricing_created_at
+        description: Defines time when the price was created
+      - name: pricing_deleted_at
+        description: Defines the time when the price was deleted. If NULL, then this row is the current price

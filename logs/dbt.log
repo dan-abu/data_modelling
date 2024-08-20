@@ -1,0 +1,877 @@
+[0m19:52:36.424945 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11242cfb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112437cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112437950>]}
+
+
+============================== 19:52:36.451297 | c515c62e-468a-4c92-a0fe-297cfd4724f0 ==============================
+[0m19:52:36.451297 [info ] [MainThread]: Running with dbt=1.8.5
+[0m19:52:36.452065 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/dan/Desktop/Daniel/Work/Coding/Side_projects/data_modelling', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/dan/Desktop/Daniel/Work/Coding/Side_projects/data_modelling/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m19:52:38.019749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1126b4110>]}
+[0m19:52:38.085343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112439a30>]}
+[0m19:52:38.090349 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m19:52:38.126931 [debug] [MainThread]: checksum: 643640a45b16e0d012867be4ac17daaa0c3ce97300faec3ce9a6de300b5e1c09, vars: {}, profile: , target: , version: 1.8.5
+[0m19:52:38.128143 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:52:38.128625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11258c770>]}
+[0m19:52:39.496632 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m19:52:39.497375 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11277a720>]}
+[0m19:52:39.749980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112990b60>]}
+[0m19:52:39.966750 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112b898b0>]}
+[0m19:52:39.967483 [info ] [MainThread]: Found 8 models, 8 data tests, 2 sources, 432 macros
+[0m19:52:39.967976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1128dfce0>]}
+[0m19:52:39.970719 [info ] [MainThread]: 
+[0m19:52:39.971466 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m19:52:39.978228 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_pricing'
+[0m19:52:40.067984 [debug] [ThreadPool]: Using duckdb connection "list_pricing"
+[0m19:52:40.068543 [debug] [ThreadPool]: On list_pricing: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "list_pricing"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"pricing"'
+    
+  
+  
+[0m19:52:40.068923 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:52:40.086246 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m19:52:40.087846 [debug] [ThreadPool]: On list_pricing: Close
+[0m19:52:40.091660 [debug] [ThreadPool]: Using duckdb connection "list_pricing"
+[0m19:52:40.092139 [debug] [ThreadPool]: On list_pricing: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "list_pricing"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"pricing"'
+    
+  
+  
+[0m19:52:40.092519 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:52:40.100383 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m19:52:40.101835 [debug] [ThreadPool]: On list_pricing: Close
+[0m19:52:40.105582 [debug] [ThreadPool]: Using duckdb connection "list_pricing"
+[0m19:52:40.106058 [debug] [ThreadPool]: On list_pricing: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "list_pricing"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"pricing"'
+    
+  
+  
+[0m19:52:40.106424 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:52:40.113901 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m19:52:40.115405 [debug] [ThreadPool]: On list_pricing: Close
+[0m19:52:40.117687 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pricing, now create_pricing_main_base)
+[0m19:52:40.118241 [debug] [ThreadPool]: Creating schema "database: "pricing"
+schema: "main_base"
+"
+[0m19:52:40.124968 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_base"
+[0m19:52:40.125382 [debug] [ThreadPool]: On create_pricing_main_base: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "create_pricing_main_base"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='pricing'
+        and type='sqlite'
+    
+  
+[0m19:52:40.125732 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:52:40.132674 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m19:52:40.134138 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_base"
+[0m19:52:40.134508 [debug] [ThreadPool]: On create_pricing_main_base: BEGIN
+[0m19:52:40.135078 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:52:40.135607 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_base"
+[0m19:52:40.136207 [debug] [ThreadPool]: On create_pricing_main_base: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "create_pricing_main_base"} */
+
+    
+    
+        create schema if not exists "pricing"."main_base"
+    
+[0m19:52:40.136959 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:52:40.138149 [debug] [ThreadPool]: On create_pricing_main_base: COMMIT
+[0m19:52:40.138669 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_base"
+[0m19:52:40.139058 [debug] [ThreadPool]: On create_pricing_main_base: COMMIT
+[0m19:52:40.139651 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:52:40.140028 [debug] [ThreadPool]: On create_pricing_main_base: Close
+[0m19:52:40.142114 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_pricing_main_base, now create_pricing_main_mart)
+[0m19:52:40.142709 [debug] [ThreadPool]: Creating schema "database: "pricing"
+schema: "main_mart"
+"
+[0m19:52:40.144801 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_mart"
+[0m19:52:40.145186 [debug] [ThreadPool]: On create_pricing_main_mart: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "create_pricing_main_mart"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='pricing'
+        and type='sqlite'
+    
+  
+[0m19:52:40.145543 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:52:40.152463 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m19:52:40.154012 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_mart"
+[0m19:52:40.154404 [debug] [ThreadPool]: On create_pricing_main_mart: BEGIN
+[0m19:52:40.154887 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:52:40.155260 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_mart"
+[0m19:52:40.155635 [debug] [ThreadPool]: On create_pricing_main_mart: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "create_pricing_main_mart"} */
+
+    
+    
+        create schema if not exists "pricing"."main_mart"
+    
+[0m19:52:40.156348 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:52:40.157410 [debug] [ThreadPool]: On create_pricing_main_mart: COMMIT
+[0m19:52:40.157794 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_mart"
+[0m19:52:40.158151 [debug] [ThreadPool]: On create_pricing_main_mart: COMMIT
+[0m19:52:40.158659 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:52:40.159033 [debug] [ThreadPool]: On create_pricing_main_mart: Close
+[0m19:52:40.161135 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_pricing_main_mart, now create_pricing_main_intm)
+[0m19:52:40.161698 [debug] [ThreadPool]: Creating schema "database: "pricing"
+schema: "main_intm"
+"
+[0m19:52:40.163805 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_intm"
+[0m19:52:40.164199 [debug] [ThreadPool]: On create_pricing_main_intm: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "create_pricing_main_intm"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='pricing'
+        and type='sqlite'
+    
+  
+[0m19:52:40.164565 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:52:40.171844 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m19:52:40.173332 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_intm"
+[0m19:52:40.173708 [debug] [ThreadPool]: On create_pricing_main_intm: BEGIN
+[0m19:52:40.174212 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:52:40.174649 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_intm"
+[0m19:52:40.175131 [debug] [ThreadPool]: On create_pricing_main_intm: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "create_pricing_main_intm"} */
+
+    
+    
+        create schema if not exists "pricing"."main_intm"
+    
+[0m19:52:40.175734 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:52:40.176686 [debug] [ThreadPool]: On create_pricing_main_intm: COMMIT
+[0m19:52:40.177071 [debug] [ThreadPool]: Using duckdb connection "create_pricing_main_intm"
+[0m19:52:40.177420 [debug] [ThreadPool]: On create_pricing_main_intm: COMMIT
+[0m19:52:40.177912 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:52:40.178282 [debug] [ThreadPool]: On create_pricing_main_intm: Close
+[0m19:52:40.181392 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_pricing_main_intm, now list_pricing_main_base)
+[0m19:52:40.187023 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_base"
+[0m19:52:40.187455 [debug] [ThreadPool]: On list_pricing_main_base: BEGIN
+[0m19:52:40.187845 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:52:40.194479 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m19:52:40.194945 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_base"
+[0m19:52:40.195330 [debug] [ThreadPool]: On list_pricing_main_base: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "list_pricing_main_base"} */
+select
+      'pricing' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_base'
+    and table_catalog = 'pricing'
+  
+[0m19:52:40.231012 [debug] [ThreadPool]: SQL status: OK in 0.035 seconds
+[0m19:52:40.232882 [debug] [ThreadPool]: On list_pricing_main_base: ROLLBACK
+[0m19:52:40.235333 [debug] [ThreadPool]: Failed to rollback 'list_pricing_main_base'
+[0m19:52:40.235929 [debug] [ThreadPool]: On list_pricing_main_base: Close
+[0m19:52:40.239522 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pricing_main_base, now list_pricing_main_mart)
+[0m19:52:40.242385 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_mart"
+[0m19:52:40.242855 [debug] [ThreadPool]: On list_pricing_main_mart: BEGIN
+[0m19:52:40.243263 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:52:40.250152 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m19:52:40.250639 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_mart"
+[0m19:52:40.251043 [debug] [ThreadPool]: On list_pricing_main_mart: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "list_pricing_main_mart"} */
+select
+      'pricing' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_mart'
+    and table_catalog = 'pricing'
+  
+[0m19:52:40.281716 [debug] [ThreadPool]: SQL status: OK in 0.030 seconds
+[0m19:52:40.288082 [debug] [ThreadPool]: On list_pricing_main_mart: ROLLBACK
+[0m19:52:40.289163 [debug] [ThreadPool]: Failed to rollback 'list_pricing_main_mart'
+[0m19:52:40.289512 [debug] [ThreadPool]: On list_pricing_main_mart: Close
+[0m19:52:40.292357 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pricing_main_mart, now list_pricing_main_intm)
+[0m19:52:40.295057 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_intm"
+[0m19:52:40.295427 [debug] [ThreadPool]: On list_pricing_main_intm: BEGIN
+[0m19:52:40.295756 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:52:40.302417 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m19:52:40.303052 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_intm"
+[0m19:52:40.303468 [debug] [ThreadPool]: On list_pricing_main_intm: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "list_pricing_main_intm"} */
+select
+      'pricing' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_intm'
+    and table_catalog = 'pricing'
+  
+[0m19:52:40.342659 [debug] [ThreadPool]: SQL status: OK in 0.039 seconds
+[0m19:52:40.344553 [debug] [ThreadPool]: On list_pricing_main_intm: ROLLBACK
+[0m19:52:40.345655 [debug] [ThreadPool]: Failed to rollback 'list_pricing_main_intm'
+[0m19:52:40.346105 [debug] [ThreadPool]: On list_pricing_main_intm: Close
+[0m19:52:40.351333 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112e408f0>]}
+[0m19:52:40.352136 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:52:40.352721 [debug] [MainThread]: On master: BEGIN
+[0m19:52:40.353189 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:52:40.362939 [debug] [MainThread]: SQL status: OK in 0.010 seconds
+[0m19:52:40.363431 [debug] [MainThread]: On master: COMMIT
+[0m19:52:40.363814 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:52:40.364352 [debug] [MainThread]: On master: COMMIT
+[0m19:52:40.364959 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:52:40.365373 [debug] [MainThread]: On master: Close
+[0m19:52:40.367341 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m19:52:40.367921 [info ] [MainThread]: 
+[0m19:52:40.372378 [debug] [Thread-1 (]: Began running node model.analytics_engineer_exercise.base_pricing__prices
+[0m19:52:40.373585 [info ] [Thread-1 (]: 1 of 8 START sql view model main_base.base_pricing__prices ..................... [RUN]
+[0m19:52:40.374731 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pricing_main_intm, now model.analytics_engineer_exercise.base_pricing__prices)
+[0m19:52:40.375725 [debug] [Thread-1 (]: Began compiling node model.analytics_engineer_exercise.base_pricing__prices
+[0m19:52:40.442661 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_engineer_exercise.base_pricing__prices"
+[0m19:52:40.444247 [debug] [Thread-1 (]: Began executing node model.analytics_engineer_exercise.base_pricing__prices
+[0m19:52:40.480075 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_engineer_exercise.base_pricing__prices"
+[0m19:52:40.481331 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__prices"
+[0m19:52:40.481760 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__prices: BEGIN
+[0m19:52:40.482259 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:52:40.488816 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:52:40.489300 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__prices"
+[0m19:52:40.489731 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__prices: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.base_pricing__prices"} */
+
+  
+  create view "pricing"."main_base"."base_pricing__prices__dbt_tmp" as (
+    -- base_pricing__prices.sql
+
+SELECT
+    price_id
+    , rule_id
+    , location_id
+    -- explicity labelling created_at as pricing_created_at
+    , created_at as pricing_created_at
+    -- explicityly labelling deleted_at as pricing_deleted_at
+    , deleted_at as pricing_deleted_at
+FROM "pricing"."main"."prices"
+  );
+
+[0m19:52:40.490552 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.497936 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__prices"
+[0m19:52:40.498651 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__prices: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.base_pricing__prices"} */
+alter view "pricing"."main_base"."base_pricing__prices" rename to "base_pricing__prices__dbt_backup"
+[0m19:52:40.499744 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.503326 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__prices"
+[0m19:52:40.503842 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__prices: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.base_pricing__prices"} */
+alter view "pricing"."main_base"."base_pricing__prices__dbt_tmp" rename to "base_pricing__prices"
+[0m19:52:40.504635 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.525218 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__prices: COMMIT
+[0m19:52:40.525763 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__prices"
+[0m19:52:40.526218 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__prices: COMMIT
+[0m19:52:40.527357 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.533199 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__prices"
+[0m19:52:40.533731 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__prices: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.base_pricing__prices"} */
+drop view if exists "pricing"."main_base"."base_pricing__prices__dbt_backup" cascade
+[0m19:52:40.534664 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.537220 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__prices: Close
+[0m19:52:40.556216 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11299a720>]}
+[0m19:52:40.556997 [info ] [Thread-1 (]: 1 of 8 OK created sql view model main_base.base_pricing__prices ................ [[32mOK[0m in 0.18s]
+[0m19:52:40.557730 [debug] [Thread-1 (]: Finished running node model.analytics_engineer_exercise.base_pricing__prices
+[0m19:52:40.558291 [debug] [Thread-1 (]: Began running node model.analytics_engineer_exercise.base_pricing__rules
+[0m19:52:40.559181 [info ] [Thread-1 (]: 2 of 8 START sql view model main_base.base_pricing__rules ...................... [RUN]
+[0m19:52:40.559879 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.analytics_engineer_exercise.base_pricing__prices, now model.analytics_engineer_exercise.base_pricing__rules)
+[0m19:52:40.560388 [debug] [Thread-1 (]: Began compiling node model.analytics_engineer_exercise.base_pricing__rules
+[0m19:52:40.563228 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_engineer_exercise.base_pricing__rules"
+[0m19:52:40.564357 [debug] [Thread-1 (]: Began executing node model.analytics_engineer_exercise.base_pricing__rules
+[0m19:52:40.567890 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_engineer_exercise.base_pricing__rules"
+[0m19:52:40.568713 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__rules"
+[0m19:52:40.569153 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__rules: BEGIN
+[0m19:52:40.569557 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:52:40.576532 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:52:40.577294 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__rules"
+[0m19:52:40.577896 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__rules: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.base_pricing__rules"} */
+
+  
+  create view "pricing"."main_base"."base_pricing__rules__dbt_tmp" as (
+    -- base_pricing__rules.sql
+
+SELECT
+    rule_id
+    , created_at rule_created_at
+    -- 'tariffs' is a JSON array, here we read it out and unwrap
+    -- the contents into one record per element:
+    , UNNEST(tariffs->'$[*]') AS tariff
+FROM
+    "pricing"."main"."rules"
+  );
+
+[0m19:52:40.578761 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.581853 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__rules"
+[0m19:52:40.582397 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__rules: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.base_pricing__rules"} */
+alter view "pricing"."main_base"."base_pricing__rules" rename to "base_pricing__rules__dbt_backup"
+[0m19:52:40.583104 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.585989 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__rules"
+[0m19:52:40.586432 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__rules: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.base_pricing__rules"} */
+alter view "pricing"."main_base"."base_pricing__rules__dbt_tmp" rename to "base_pricing__rules"
+[0m19:52:40.587086 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.588794 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__rules: COMMIT
+[0m19:52:40.589385 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__rules"
+[0m19:52:40.589969 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__rules: COMMIT
+[0m19:52:40.591098 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.593648 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.base_pricing__rules"
+[0m19:52:40.594148 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__rules: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.base_pricing__rules"} */
+drop view if exists "pricing"."main_base"."base_pricing__rules__dbt_backup" cascade
+[0m19:52:40.595027 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.596571 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.base_pricing__rules: Close
+[0m19:52:40.600243 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1128dc320>]}
+[0m19:52:40.601009 [info ] [Thread-1 (]: 2 of 8 OK created sql view model main_base.base_pricing__rules ................. [[32mOK[0m in 0.04s]
+[0m19:52:40.601792 [debug] [Thread-1 (]: Finished running node model.analytics_engineer_exercise.base_pricing__rules
+[0m19:52:40.602331 [debug] [Thread-1 (]: Began running node model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices
+[0m19:52:40.603102 [info ] [Thread-1 (]: 3 of 8 START sql view model main_intm.intm_pricing__filtered_to_crnt_prices .... [RUN]
+[0m19:52:40.603664 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.analytics_engineer_exercise.base_pricing__rules, now model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices)
+[0m19:52:40.604103 [debug] [Thread-1 (]: Began compiling node model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices
+[0m19:52:40.608789 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"
+[0m19:52:40.609825 [debug] [Thread-1 (]: Began executing node model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices
+[0m19:52:40.613764 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"
+[0m19:52:40.614762 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"
+[0m19:52:40.615208 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices: BEGIN
+[0m19:52:40.615663 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:52:40.622908 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:52:40.623440 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"
+[0m19:52:40.623933 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"} */
+
+  
+  create view "pricing"."main_intm"."intm_pricing__filtered_to_crnt_prices__dbt_tmp" as (
+    -- intm_pricing__filtered_to_crnt_prices.sql
+
+SELECT
+    price_id
+    , rule_id
+    , location_id
+    , pricing_created_at
+    , pricing_deleted_at
+FROM "pricing"."main_base"."base_pricing__prices"
+-- excluding historical prices
+WHERE pricing_deleted_at IS NULL
+  );
+
+[0m19:52:40.624790 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.628117 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"
+[0m19:52:40.628655 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"} */
+alter view "pricing"."main_intm"."intm_pricing__filtered_to_crnt_prices" rename to "intm_pricing__filtered_to_crnt_prices__dbt_backup"
+[0m19:52:40.629427 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.632318 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"
+[0m19:52:40.632808 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"} */
+alter view "pricing"."main_intm"."intm_pricing__filtered_to_crnt_prices__dbt_tmp" rename to "intm_pricing__filtered_to_crnt_prices"
+[0m19:52:40.633554 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.635503 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices: COMMIT
+[0m19:52:40.635997 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"
+[0m19:52:40.636531 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices: COMMIT
+[0m19:52:40.637631 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.640249 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"
+[0m19:52:40.640772 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices"} */
+drop view if exists "pricing"."main_intm"."intm_pricing__filtered_to_crnt_prices__dbt_backup" cascade
+[0m19:52:40.641705 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.643258 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices: Close
+[0m19:52:40.646782 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113043fb0>]}
+[0m19:52:40.647535 [info ] [Thread-1 (]: 3 of 8 OK created sql view model main_intm.intm_pricing__filtered_to_crnt_prices  [[32mOK[0m in 0.04s]
+[0m19:52:40.648290 [debug] [Thread-1 (]: Finished running node model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices
+[0m19:52:40.648942 [debug] [Thread-1 (]: Began running node model.analytics_engineer_exercise.intm_pricing__tariffs
+[0m19:52:40.649567 [info ] [Thread-1 (]: 4 of 8 START sql view model main_intm.intm_pricing__tariffs .................... [RUN]
+[0m19:52:40.650213 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.analytics_engineer_exercise.intm_pricing__filtered_to_crnt_prices, now model.analytics_engineer_exercise.intm_pricing__tariffs)
+[0m19:52:40.650713 [debug] [Thread-1 (]: Began compiling node model.analytics_engineer_exercise.intm_pricing__tariffs
+[0m19:52:40.653387 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_engineer_exercise.intm_pricing__tariffs"
+[0m19:52:40.654453 [debug] [Thread-1 (]: Began executing node model.analytics_engineer_exercise.intm_pricing__tariffs
+[0m19:52:40.658625 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_engineer_exercise.intm_pricing__tariffs"
+[0m19:52:40.659614 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__tariffs"
+[0m19:52:40.660103 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__tariffs: BEGIN
+[0m19:52:40.660519 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:52:40.667329 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:52:40.667854 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__tariffs"
+[0m19:52:40.668318 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__tariffs: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_pricing__tariffs"} */
+
+  
+  create view "pricing"."main_intm"."intm_pricing__tariffs__dbt_tmp" as (
+    -- intm_pricing__tariffs
+
+SELECT
+    rule_id
+    , rule_created_at as tariff_created_at
+    -- here we extract the values of certain keys in each
+    -- JSON tariff record (d):
+    , tariff->>'$.price' AS tariff_price
+    -- 'size' refers to the duration of the parking session:
+    , tariff->>'$.size' AS duration
+    , tariff->>'$.interval' AS time_interval
+    -- 'applies_on_days' is an array
+    , tariff->>'$.applies_on_days[*]' AS applies_on_days
+    , tariff->>'$.monthly' AS monthly
+    
+FROM
+    "pricing"."main_base"."base_pricing__rules"
+  );
+
+[0m19:52:40.669347 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.672536 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__tariffs"
+[0m19:52:40.673139 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__tariffs: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_pricing__tariffs"} */
+alter view "pricing"."main_intm"."intm_pricing__tariffs" rename to "intm_pricing__tariffs__dbt_backup"
+[0m19:52:40.673900 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.677261 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__tariffs"
+[0m19:52:40.677800 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__tariffs: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_pricing__tariffs"} */
+alter view "pricing"."main_intm"."intm_pricing__tariffs__dbt_tmp" rename to "intm_pricing__tariffs"
+[0m19:52:40.678582 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.680398 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__tariffs: COMMIT
+[0m19:52:40.680866 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__tariffs"
+[0m19:52:40.681296 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__tariffs: COMMIT
+[0m19:52:40.682441 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.685091 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_pricing__tariffs"
+[0m19:52:40.685650 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__tariffs: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_pricing__tariffs"} */
+drop view if exists "pricing"."main_intm"."intm_pricing__tariffs__dbt_backup" cascade
+[0m19:52:40.686586 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.688166 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_pricing__tariffs: Close
+[0m19:52:40.691677 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1129781a0>]}
+[0m19:52:40.692474 [info ] [Thread-1 (]: 4 of 8 OK created sql view model main_intm.intm_pricing__tariffs ............... [[32mOK[0m in 0.04s]
+[0m19:52:40.693275 [debug] [Thread-1 (]: Finished running node model.analytics_engineer_exercise.intm_pricing__tariffs
+[0m19:52:40.693832 [debug] [Thread-1 (]: Began running node model.analytics_engineer_exercise.intm_tariffs__converted_to_duration
+[0m19:52:40.694490 [info ] [Thread-1 (]: 5 of 8 START sql view model main_intm.intm_tariffs__converted_to_duration ...... [RUN]
+[0m19:52:40.695096 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.analytics_engineer_exercise.intm_pricing__tariffs, now model.analytics_engineer_exercise.intm_tariffs__converted_to_duration)
+[0m19:52:40.695558 [debug] [Thread-1 (]: Began compiling node model.analytics_engineer_exercise.intm_tariffs__converted_to_duration
+[0m19:52:40.698625 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"
+[0m19:52:40.699526 [debug] [Thread-1 (]: Began executing node model.analytics_engineer_exercise.intm_tariffs__converted_to_duration
+[0m19:52:40.705386 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"
+[0m19:52:40.706358 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"
+[0m19:52:40.706885 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__converted_to_duration: BEGIN
+[0m19:52:40.707310 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:52:40.714188 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:52:40.714712 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"
+[0m19:52:40.715190 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__converted_to_duration: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"} */
+
+  
+  create view "pricing"."main_intm"."intm_tariffs__converted_to_duration__dbt_tmp" as (
+    -- intm_tariffs__converted_to_duration.sql
+WITH extracted_json AS (
+    SELECT
+        rule_id
+        , rule_created_at AS tariff_created_at
+        -- extracting price from tariff json
+        , tariff->>'$.price' AS tariff_price
+        , tariff->>'$.size' AS size
+        , tariff->>'$.interval' AS interval
+        , tariff->>'$.monthly' AS monthly
+        -- applies_on_days is an array
+        , tariff->>'$.applies_on_days[*]' AS applies_on_days
+    FROM "pricing"."main_base"."base_pricing__rules"
+)
+SELECT
+    rule_id
+    , tariff_created_at
+    , tariff_price
+    -- concatenating size and interval to create parking session duration
+    -- using CASE statement to convert monthly key into duration value when true
+    , CASE
+        WHEN monthly == 'TRUE' THEN '1 month'
+        ELSE size || ' ' || interval
+      END AS duration
+    , applies_on_days
+FROM extracted_json
+  );
+
+[0m19:52:40.716385 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.719618 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"
+[0m19:52:40.720125 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__converted_to_duration: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"} */
+alter view "pricing"."main_intm"."intm_tariffs__converted_to_duration" rename to "intm_tariffs__converted_to_duration__dbt_backup"
+[0m19:52:40.720910 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.724198 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"
+[0m19:52:40.724736 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__converted_to_duration: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"} */
+alter view "pricing"."main_intm"."intm_tariffs__converted_to_duration__dbt_tmp" rename to "intm_tariffs__converted_to_duration"
+[0m19:52:40.725506 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.727298 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__converted_to_duration: COMMIT
+[0m19:52:40.727775 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"
+[0m19:52:40.728197 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__converted_to_duration: COMMIT
+[0m19:52:40.729286 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.731741 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"
+[0m19:52:40.732344 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__converted_to_duration: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_tariffs__converted_to_duration"} */
+drop view if exists "pricing"."main_intm"."intm_tariffs__converted_to_duration__dbt_backup" cascade
+[0m19:52:40.733360 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.734970 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__converted_to_duration: Close
+[0m19:52:40.738416 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11297f0e0>]}
+[0m19:52:40.739192 [info ] [Thread-1 (]: 5 of 8 OK created sql view model main_intm.intm_tariffs__converted_to_duration . [[32mOK[0m in 0.04s]
+[0m19:52:40.739909 [debug] [Thread-1 (]: Finished running node model.analytics_engineer_exercise.intm_tariffs__converted_to_duration
+[0m19:52:40.740681 [debug] [Thread-1 (]: Began running node model.analytics_engineer_exercise.historical_1hr_prices_by_loc
+[0m19:52:40.741392 [info ] [Thread-1 (]: 6 of 8 START sql table model main_mart.historical_1hr_prices_by_loc ............ [RUN]
+[0m19:52:40.742006 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.analytics_engineer_exercise.intm_tariffs__converted_to_duration, now model.analytics_engineer_exercise.historical_1hr_prices_by_loc)
+[0m19:52:40.742504 [debug] [Thread-1 (]: Began compiling node model.analytics_engineer_exercise.historical_1hr_prices_by_loc
+[0m19:52:40.745609 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:52:40.746784 [debug] [Thread-1 (]: Began executing node model.analytics_engineer_exercise.historical_1hr_prices_by_loc
+[0m19:52:40.768759 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:52:40.769791 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:52:40.770238 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: BEGIN
+[0m19:52:40.770651 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:52:40.777970 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:52:40.778495 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:52:40.779042 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"} */
+
+  
+    
+    
+
+    create  table
+      "pricing"."main_mart"."historical_1hr_prices_by_loc__dbt_tmp"
+  
+    as (
+      -- historical_1hr_prices_by_loc.sql
+WITH one_hr_session AS (
+    -- including only 1 hour parking sessions
+    SELECT
+        *
+    FROM "pricing"."main_intm"."intm_tariffs__converted_to_duration"
+    WHERE duration == '1 hours'
+),
+prices AS (
+    SELECT
+        location_id
+        , rule_id
+        , pricing_created_at
+    FROM "pricing"."main_base"."base_pricing__prices"
+),
+historical_one_hr_prices_by_loc AS (
+    SELECT
+        p.location_id
+        , p.rule_id
+        , ohs.tariff_price
+        , ohs.tariff_created_at
+        , p.pricing_created_at
+    FROM prices p
+    LEFT JOIN one_hr_session ohs ON ohs.rule_id = p.rule_id
+)
+SELECT * FROM historical_one_hr_prices_by_loc
+    );
+  
+  
+[0m19:52:40.853074 [debug] [Thread-1 (]: SQL status: OK in 0.073 seconds
+[0m19:52:40.856269 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:52:40.856792 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"} */
+alter table "pricing"."main_mart"."historical_1hr_prices_by_loc" rename to "historical_1hr_prices_by_loc__dbt_backup"
+[0m19:52:40.857590 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.860726 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:52:40.861244 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"} */
+alter table "pricing"."main_mart"."historical_1hr_prices_by_loc__dbt_tmp" rename to "historical_1hr_prices_by_loc"
+[0m19:52:40.861985 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.867972 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: COMMIT
+[0m19:52:40.868504 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:52:40.868924 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: COMMIT
+[0m19:52:40.871002 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:52:40.874053 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:52:40.874700 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"} */
+drop table if exists "pricing"."main_mart"."historical_1hr_prices_by_loc__dbt_backup" cascade
+[0m19:52:40.876645 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.879836 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: Close
+[0m19:52:40.892784 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112992240>]}
+[0m19:52:40.893810 [info ] [Thread-1 (]: 6 of 8 OK created sql table model main_mart.historical_1hr_prices_by_loc ....... [[32mOK[0m in 0.15s]
+[0m19:52:40.894723 [debug] [Thread-1 (]: Finished running node model.analytics_engineer_exercise.historical_1hr_prices_by_loc
+[0m19:52:40.895324 [debug] [Thread-1 (]: Began running node model.analytics_engineer_exercise.intm_tariffs__unnested_weekday
+[0m19:52:40.896009 [info ] [Thread-1 (]: 7 of 8 START sql view model main_intm.intm_tariffs__unnested_weekday ........... [RUN]
+[0m19:52:40.896655 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.analytics_engineer_exercise.historical_1hr_prices_by_loc, now model.analytics_engineer_exercise.intm_tariffs__unnested_weekday)
+[0m19:52:40.897180 [debug] [Thread-1 (]: Began compiling node model.analytics_engineer_exercise.intm_tariffs__unnested_weekday
+[0m19:52:40.900230 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"
+[0m19:52:40.901570 [debug] [Thread-1 (]: Began executing node model.analytics_engineer_exercise.intm_tariffs__unnested_weekday
+[0m19:52:40.906314 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"
+[0m19:52:40.907260 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"
+[0m19:52:40.907719 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__unnested_weekday: BEGIN
+[0m19:52:40.908154 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:52:40.915619 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:52:40.916198 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"
+[0m19:52:40.916691 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__unnested_weekday: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"} */
+
+  
+  create view "pricing"."main_intm"."intm_tariffs__unnested_weekday__dbt_tmp" as (
+    -- intm_tariffs__unnested_weekday.sql
+
+SELECT
+    rule_id
+    , tariff_created_at
+    , tariff_price
+    , duration
+    -- unnesting applies_on_days to show the weekdays when a rule's tariff price
+    -- applies row by row depending on duration
+    , UNNEST(applies_on_days->>'$[*]') applies_on_weekday_id
+FROM "pricing"."main_intm"."intm_tariffs__converted_to_duration"
+  );
+
+[0m19:52:40.918022 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.922848 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"
+[0m19:52:40.923443 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__unnested_weekday: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"} */
+alter view "pricing"."main_intm"."intm_tariffs__unnested_weekday" rename to "intm_tariffs__unnested_weekday__dbt_backup"
+[0m19:52:40.924229 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.927239 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"
+[0m19:52:40.927828 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__unnested_weekday: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"} */
+alter view "pricing"."main_intm"."intm_tariffs__unnested_weekday__dbt_tmp" rename to "intm_tariffs__unnested_weekday"
+[0m19:52:40.928598 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.930315 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__unnested_weekday: COMMIT
+[0m19:52:40.930752 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"
+[0m19:52:40.931167 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__unnested_weekday: COMMIT
+[0m19:52:40.932270 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:40.934701 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"
+[0m19:52:40.935153 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__unnested_weekday: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.intm_tariffs__unnested_weekday"} */
+drop view if exists "pricing"."main_intm"."intm_tariffs__unnested_weekday__dbt_backup" cascade
+[0m19:52:40.936073 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:40.937560 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.intm_tariffs__unnested_weekday: Close
+[0m19:52:40.941338 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112966fc0>]}
+[0m19:52:40.942094 [info ] [Thread-1 (]: 7 of 8 OK created sql view model main_intm.intm_tariffs__unnested_weekday ...... [[32mOK[0m in 0.04s]
+[0m19:52:40.942883 [debug] [Thread-1 (]: Finished running node model.analytics_engineer_exercise.intm_tariffs__unnested_weekday
+[0m19:52:40.943867 [debug] [Thread-1 (]: Began running node model.analytics_engineer_exercise.current_price_by_weekday_loc_dur
+[0m19:52:40.944514 [info ] [Thread-1 (]: 8 of 8 START sql table model main_mart.current_price_by_weekday_loc_dur ........ [RUN]
+[0m19:52:40.945085 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.analytics_engineer_exercise.intm_tariffs__unnested_weekday, now model.analytics_engineer_exercise.current_price_by_weekday_loc_dur)
+[0m19:52:40.945548 [debug] [Thread-1 (]: Began compiling node model.analytics_engineer_exercise.current_price_by_weekday_loc_dur
+[0m19:52:40.948503 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"
+[0m19:52:40.949659 [debug] [Thread-1 (]: Began executing node model.analytics_engineer_exercise.current_price_by_weekday_loc_dur
+[0m19:52:40.953209 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"
+[0m19:52:40.954092 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"
+[0m19:52:40.954577 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.current_price_by_weekday_loc_dur: BEGIN
+[0m19:52:40.955021 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:52:40.962284 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:52:40.962821 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"
+[0m19:52:40.963295 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.current_price_by_weekday_loc_dur: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"} */
+
+  
+    
+    
+
+    create  table
+      "pricing"."main_mart"."current_price_by_weekday_loc_dur__dbt_tmp"
+  
+    as (
+      -- current_price_by_weekday_loc_dur.sql
+WITH unnested_weekday_tariffs AS (
+    SELECT * FROM "pricing"."main_intm"."intm_tariffs__unnested_weekday"
+),
+current_prices AS (
+    SELECT
+        rule_id
+        , location_id
+    FROM "pricing"."main_intm"."intm_pricing__filtered_to_crnt_prices"
+),
+current_prices_by_weekday_loc_dur AS (
+    -- joining location data to show the weekdays when a location's rule's current
+    -- tariff price applies row by row depending on duration
+    SELECT
+        cp.location_id
+        , uwt.rule_id
+        , uwt.applies_on_weekday_id
+        , uwt.tariff_price
+        , uwt.duration
+    FROM current_prices cp 
+    LEFT JOIN unnested_weekday_tariffs uwt on uwt.rule_id = cp.rule_id
+)
+SELECT * FROM current_prices_by_weekday_loc_dur
+    );
+  
+  
+[0m19:52:41.120095 [debug] [Thread-1 (]: SQL status: OK in 0.156 seconds
+[0m19:52:41.123289 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"
+[0m19:52:41.123850 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.current_price_by_weekday_loc_dur: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"} */
+alter table "pricing"."main_mart"."current_price_by_weekday_loc_dur" rename to "current_price_by_weekday_loc_dur__dbt_backup"
+[0m19:52:41.124687 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:41.128030 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"
+[0m19:52:41.128643 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.current_price_by_weekday_loc_dur: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"} */
+alter table "pricing"."main_mart"."current_price_by_weekday_loc_dur__dbt_tmp" rename to "current_price_by_weekday_loc_dur"
+[0m19:52:41.129497 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:52:41.131541 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.current_price_by_weekday_loc_dur: COMMIT
+[0m19:52:41.132021 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"
+[0m19:52:41.132450 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.current_price_by_weekday_loc_dur: COMMIT
+[0m19:52:41.136081 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m19:52:41.138749 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"
+[0m19:52:41.139330 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.current_price_by_weekday_loc_dur: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.current_price_by_weekday_loc_dur"} */
+drop table if exists "pricing"."main_mart"."current_price_by_weekday_loc_dur__dbt_backup" cascade
+[0m19:52:41.140370 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:52:41.142150 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.current_price_by_weekday_loc_dur: Close
+[0m19:52:41.156845 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c515c62e-468a-4c92-a0fe-297cfd4724f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112718980>]}
+[0m19:52:41.157713 [info ] [Thread-1 (]: 8 of 8 OK created sql table model main_mart.current_price_by_weekday_loc_dur ... [[32mOK[0m in 0.21s]
+[0m19:52:41.158477 [debug] [Thread-1 (]: Finished running node model.analytics_engineer_exercise.current_price_by_weekday_loc_dur
+[0m19:52:41.159724 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:52:41.160178 [debug] [MainThread]: On master: BEGIN
+[0m19:52:41.160557 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:52:41.169034 [debug] [MainThread]: SQL status: OK in 0.008 seconds
+[0m19:52:41.169520 [debug] [MainThread]: On master: COMMIT
+[0m19:52:41.170020 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:52:41.170423 [debug] [MainThread]: On master: COMMIT
+[0m19:52:41.171034 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:52:41.171515 [debug] [MainThread]: On master: Close
+[0m19:52:41.174103 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:52:41.174553 [debug] [MainThread]: Connection 'model.analytics_engineer_exercise.current_price_by_weekday_loc_dur' was properly closed.
+[0m19:52:41.175040 [info ] [MainThread]: 
+[0m19:52:41.175565 [info ] [MainThread]: Finished running 6 view models, 2 table models in 0 hours 0 minutes and 1.20 seconds (1.20s).
+[0m19:52:41.177731 [debug] [MainThread]: Command end result
+[0m19:52:41.235196 [info ] [MainThread]: 
+[0m19:52:41.235799 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:52:41.236229 [info ] [MainThread]: 
+[0m19:52:41.236640 [info ] [MainThread]: Done. PASS=8 WARN=0 ERROR=0 SKIP=0 TOTAL=8
+[0m19:52:41.239560 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.91763, "process_user_time": 7.204117, "process_kernel_time": 1.207435, "process_mem_max_rss": "161542144", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m19:52:41.240298 [debug] [MainThread]: Command `dbt run` succeeded at 19:52:41.240169 after 4.92 seconds
+[0m19:52:41.240774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11277b770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fcd6a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111f2b8f0>]}
+[0m19:52:41.241206 [debug] [MainThread]: Flushing usage events
+[0m19:53:15.213725 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e22e0c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e642720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e642420>]}
+
+
+============================== 19:53:15.221885 | ac664d7a-598d-4676-8c8d-6004f9613e41 ==============================
+[0m19:53:15.221885 [info ] [MainThread]: Running with dbt=1.8.5
+[0m19:53:15.222835 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/dan/Desktop/Daniel/Work/Coding/Side_projects/data_modelling', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/dan/Desktop/Daniel/Work/Coding/Side_projects/data_modelling/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt show --select historical_1hr_prices_by_loc.sql', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m19:53:15.697280 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ac664d7a-598d-4676-8c8d-6004f9613e41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e7a7620>]}
+[0m19:53:15.760863 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ac664d7a-598d-4676-8c8d-6004f9613e41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d76c050>]}
+[0m19:53:15.766517 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m19:53:15.805539 [debug] [MainThread]: checksum: 643640a45b16e0d012867be4ac17daaa0c3ce97300faec3ce9a6de300b5e1c09, vars: {}, profile: , target: , version: 1.8.5
+[0m19:53:15.991519 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:53:15.992421 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:53:16.049479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ac664d7a-598d-4676-8c8d-6004f9613e41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6d78f0>]}
+[0m19:53:16.183028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ac664d7a-598d-4676-8c8d-6004f9613e41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eaa1ee0>]}
+[0m19:53:16.183786 [info ] [MainThread]: Found 8 models, 8 data tests, 2 sources, 432 macros
+[0m19:53:16.184336 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ac664d7a-598d-4676-8c8d-6004f9613e41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10db5b770>]}
+[0m19:53:16.187034 [info ] [MainThread]: 
+[0m19:53:16.187867 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m19:53:16.194147 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_pricing_main_mart'
+[0m19:53:16.261436 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_mart"
+[0m19:53:16.261959 [debug] [ThreadPool]: On list_pricing_main_mart: BEGIN
+[0m19:53:16.262355 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:53:16.286249 [debug] [ThreadPool]: SQL status: OK in 0.024 seconds
+[0m19:53:16.286915 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_mart"
+[0m19:53:16.287484 [debug] [ThreadPool]: On list_pricing_main_mart: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "list_pricing_main_mart"} */
+select
+      'pricing' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_mart'
+    and table_catalog = 'pricing'
+  
+[0m19:53:16.351118 [debug] [ThreadPool]: SQL status: OK in 0.063 seconds
+[0m19:53:16.359290 [debug] [ThreadPool]: On list_pricing_main_mart: ROLLBACK
+[0m19:53:16.362141 [debug] [ThreadPool]: Failed to rollback 'list_pricing_main_mart'
+[0m19:53:16.362709 [debug] [ThreadPool]: On list_pricing_main_mart: Close
+[0m19:53:16.367836 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pricing_main_mart, now list_pricing_main_base)
+[0m19:53:16.370405 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_base"
+[0m19:53:16.371441 [debug] [ThreadPool]: On list_pricing_main_base: BEGIN
+[0m19:53:16.371864 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:53:16.378999 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m19:53:16.379459 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_base"
+[0m19:53:16.379862 [debug] [ThreadPool]: On list_pricing_main_base: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "list_pricing_main_base"} */
+select
+      'pricing' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_base'
+    and table_catalog = 'pricing'
+  
+[0m19:53:16.415110 [debug] [ThreadPool]: SQL status: OK in 0.035 seconds
+[0m19:53:16.416900 [debug] [ThreadPool]: On list_pricing_main_base: ROLLBACK
+[0m19:53:16.417871 [debug] [ThreadPool]: Failed to rollback 'list_pricing_main_base'
+[0m19:53:16.418227 [debug] [ThreadPool]: On list_pricing_main_base: Close
+[0m19:53:16.420940 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pricing_main_base, now list_pricing_main_intm)
+[0m19:53:16.423182 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_intm"
+[0m19:53:16.423575 [debug] [ThreadPool]: On list_pricing_main_intm: BEGIN
+[0m19:53:16.423915 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:53:16.430526 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m19:53:16.431092 [debug] [ThreadPool]: Using duckdb connection "list_pricing_main_intm"
+[0m19:53:16.431468 [debug] [ThreadPool]: On list_pricing_main_intm: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "connection_name": "list_pricing_main_intm"} */
+select
+      'pricing' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_intm'
+    and table_catalog = 'pricing'
+  
+[0m19:53:16.466647 [debug] [ThreadPool]: SQL status: OK in 0.035 seconds
+[0m19:53:16.474408 [debug] [ThreadPool]: On list_pricing_main_intm: ROLLBACK
+[0m19:53:16.476332 [debug] [ThreadPool]: Failed to rollback 'list_pricing_main_intm'
+[0m19:53:16.476979 [debug] [ThreadPool]: On list_pricing_main_intm: Close
+[0m19:53:16.481837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ac664d7a-598d-4676-8c8d-6004f9613e41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cf09cd0>]}
+[0m19:53:16.482682 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m19:53:16.483347 [info ] [MainThread]: 
+[0m19:53:16.486642 [debug] [Thread-1 (]: Began running node model.analytics_engineer_exercise.historical_1hr_prices_by_loc
+[0m19:53:16.487414 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pricing_main_intm, now model.analytics_engineer_exercise.historical_1hr_prices_by_loc)
+[0m19:53:16.488044 [debug] [Thread-1 (]: Began compiling node model.analytics_engineer_exercise.historical_1hr_prices_by_loc
+[0m19:53:16.499482 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:53:16.500495 [debug] [Thread-1 (]: Began executing node model.analytics_engineer_exercise.historical_1hr_prices_by_loc
+[0m19:53:16.509434 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"
+[0m19:53:16.510025 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: /* {"app": "dbt", "dbt_version": "1.8.5", "profile_name": "analytics_engineer_exercise", "target_name": "prod", "node_id": "model.analytics_engineer_exercise.historical_1hr_prices_by_loc"} */
+
+  
+  -- historical_1hr_prices_by_loc.sql
+WITH one_hr_session AS (
+    -- including only 1 hour parking sessions
+    SELECT
+        *
+    FROM "pricing"."main_intm"."intm_tariffs__converted_to_duration"
+    WHERE duration == '1 hours'
+),
+prices AS (
+    SELECT
+        location_id
+        , rule_id
+        , pricing_created_at
+    FROM "pricing"."main_base"."base_pricing__prices"
+),
+historical_one_hr_prices_by_loc AS (
+    SELECT
+        p.location_id
+        , p.rule_id
+        , ohs.tariff_price
+        , ohs.tariff_created_at
+        , p.pricing_created_at
+    FROM prices p
+    LEFT JOIN one_hr_session ohs ON ohs.rule_id = p.rule_id
+)
+SELECT * FROM historical_one_hr_prices_by_loc
+  
+  limit 5
+
+[0m19:53:16.510508 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:53:16.604793 [debug] [Thread-1 (]: SQL status: OK in 0.094 seconds
+[0m19:53:16.608786 [debug] [Thread-1 (]: On model.analytics_engineer_exercise.historical_1hr_prices_by_loc: Close
+[0m19:53:16.611594 [debug] [Thread-1 (]: Finished running node model.analytics_engineer_exercise.historical_1hr_prices_by_loc
+[0m19:53:16.612880 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:53:16.613467 [debug] [MainThread]: Connection 'model.analytics_engineer_exercise.historical_1hr_prices_by_loc' was properly closed.
+[0m19:53:16.614621 [debug] [MainThread]: Command end result
+[0m19:53:16.653780 [info ] [MainThread]: Previewing node 'historical_1hr_prices_by_loc':
+| location_id | rule_id | tariff_price |    tariff_created_at |  pricing_created_at |
+| ----------- | ------- | ------------ | -------------------- | ------------------- |
+|      185929 | 1127731 | 0.73         | 2023-09-01 16:02:... | 2023-09-15 09:49:30 |
+|      184929 |  984187 | 0.8          | 2023-03-17 08:49:... | 2023-09-15 09:47:46 |
+|      194734 | 1135983 | 0.89         | 2023-09-01 16:10:... | 2023-09-01 15:10:09 |
+|      194734 | 1135983 | 0.89         | 2023-09-01 16:10:... | 2023-09-15 09:50:48 |
+|      179406 | 1006818 | 1.09         | 2023-03-30 14:41:... | 2023-09-15 09:48:05 |
+
+[0m19:53:16.656401 [debug] [MainThread]: Resource report: {"command_name": "show", "command_success": true, "command_wall_clock_time": 1.5319782, "process_user_time": 3.470176, "process_kernel_time": 0.653033, "process_mem_max_rss": "144875520", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m19:53:16.657327 [debug] [MainThread]: Command `dbt show` succeeded at 19:53:16.657166 after 1.53 seconds
+[0m19:53:16.657899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eaa14f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e7a6990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e3efe30>]}
+[0m19:53:16.658594 [debug] [MainThread]: Flushing usage events

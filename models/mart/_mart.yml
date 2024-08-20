@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: current_price_by_weekday_loc_dur
+    description: | 
+        shows the weekdays when a location's rule's current tariff prices applies
+        row by row depending on duration
+    columns:
+      - name: location_id
+        data_type: bigint
+        description: parking session location
+
+      - name: rule_id
+        data_type: bigint
+        description: set of rules defining price logic
+
+      - name: applies_on_weekday_id
+        data_type: varchar
+        description: weekday when rule/tariffs apply
+
+      - name: tariff_price
+        data_type: varchar
+        description: price set for tariff
+
+      - name: duration
+        data_type: varchar
+        description: length of parking session
+
+  - name: historical_1hr_prices_by_loc
+    description: ""
+    columns:
+      - name: location_id
+        data_type: bigint
+        description: | 
+            shows how prices for 1-hour parking sessions have changed over time
+
+      - name: rule_id
+        data_type: bigint
+        description: set of rules defining price logic
+
+      - name: tariff_price
+        data_type: varchar
+        description: price set for tariff
+
+      - name: tariff_created_at
+        data_type: timestamp with time zone
+        description: time when tariff was created
+
+      - name: pricing_created_at
+        data_type: timestamp_ns
+        description: time when pricing logic was applied
